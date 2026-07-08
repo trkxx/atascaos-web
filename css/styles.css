@@ -1,0 +1,269 @@
+/* Variables - Estética */
+:root {
+    --bg-color: #080808;
+    --text-color: #e0e0e0;
+    --accent-color: #7a00ff;
+    --card-bg: #121212;
+    --font-titulos: 'Bebas Neue', sans-serif;
+    --font-texto: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-texto);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8vw;
+    background-color: rgba(8, 8, 8, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+nav h1 {
+    font-family: var(--font-titulos);
+    font-size: 2rem;
+    letter-spacing: 3px;
+    color: var(--text-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10vw;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('../assets/img/placeholder-fondo.jpg') center/cover;
+}
+
+header h2 {
+    font-family: var(--font-titulos);
+    font-size: 6rem;
+    margin-bottom: 15px;
+    letter-spacing: 5px;
+    color: var(--accent-color);
+}
+
+header p {
+    max-width: 700px;
+    font-size: 1.1rem;
+    color: #bbb;
+}
+
+/* Secciones Generales */
+section {
+    padding: 120px 10vw;
+}
+
+.section-title {
+    font-family: var(--font-titulos);
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+    border-left: 5px solid var(--accent-color);
+    padding-left: 20px;
+    line-height: 1;
+}
+
+/* Registro / Eventos */
+.grid-eventos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+.card-evento {
+    background-color: var(--card-bg);
+    border: 1px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.card-evento:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-color);
+    box-shadow: 0 15px 30px rgba(122, 0, 255, 0.1);
+}
+
+.card-evento img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(80%) contrast(1.2);
+    transition: filter 0.4s;
+}
+
+.card-evento:hover img {
+    filter: grayscale(0%) contrast(1);
+}
+
+.card-info {
+    padding: 30px;
+}
+
+.card-info h3 {
+    font-family: var(--font-titulos);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.card-info p {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.btn-registro {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-registro:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+/* El Equipo */
+.grid-equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.miembro {
+    padding: 40px 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+/* Estilos para las fotos circulares */
+.foto-perfil {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Hace la foto un círculo */
+    object-fit: cover;
+    border: 3px solid #222;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+.miembro:hover .foto-perfil {
+    border-color: var(--accent-color); /* Brilla morado al pasar el mouse */
+}
+
+.miembro h4 {
+    font-family: var(--font-titulos);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+    letter-spacing: 1px;
+}
+
+.miembro p {
+    font-size: 0.8rem;
+    color: #777;
+}
+
+/* Footer */
+footer {
+    background-color: #050505;
+    text-align: center;
+    padding: 60px 20px;
+    border-top: 1px solid #1a1a1a;
+}
+
+/* =========================================
+   MEDIA QUERIES - PARA CELULARES
+   ========================================= */
+@media (max-width: 768px) {
+    /* Achica los padding generales */
+    section {
+        padding: 80px 5vw;
+    }
+
+    /* Ajusta el menú de navegación para que no se desborde */
+    nav {
+        flex-direction: column;
+        padding: 15px 5vw;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Evita que el título masivo rompa la pantalla */
+    header h2 {
+        font-size: 3.5rem; 
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Achica los títulos de las secciones */
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    /* Asegura que la grilla ocupe el 100% en celu */
+    .grid-eventos {
+        grid-template-columns: 1fr; 
+    }
+}
